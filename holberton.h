@@ -4,22 +4,23 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct sym_func - structure for symbols and functions
  *
- * @op: Operator
- * @fn: respective function
+ * @t: Characters
+ * @fn: respective functions
  */
 
-struct sym_func
+struct type_spec
 {
-char *op;
+char *t;
 int (*fn)(va_list);
 };
-typedef struct sym_func sym_fun;
+typedef struct type_spec spec_t;
 /* Function prototypes*/
-
+int parse_args(const char *format, spec_t fun_list[], va_list arg_list);
 int print_number(va_list args);
 int print_unsgined_number(unsigned int n);
 int print_char(va_list list);
