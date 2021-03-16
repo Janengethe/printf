@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 		{"d", print_integer},
 		{"i", print_integer},
 		{"u", unsigned_integer}
-            	};
-		va_list arg_list;
+	};
+	va_list arg_list;
 
 		if (format == NULL)
 			return (-1);
