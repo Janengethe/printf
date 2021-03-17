@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * _printf - prints a formatted string from the main string and other variable
  * arguments passed to it
@@ -16,7 +17,14 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{"d", print_integer},
 		{"i", print_integer},
-		{"u", unsigned_integer}
+		{"u", unsigned_integer},
+		{"b", print_binary},
+		{"r", print_reverse},
+		{"R", rot13},
+		{"o", decoct},
+		{"x", dec_hex},
+		{"X", print_odh},
+		{NULL, NULL}
 	};
 	va_list arg_list;
 
