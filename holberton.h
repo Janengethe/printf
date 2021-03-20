@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 /**
- * struct sym_func - structure for symbols and functions
+ * struct type_spec - structure for symbols and functions
  *
  * @t: Characters
  * @fn: respective functions
@@ -20,13 +20,17 @@ int (*fn)(va_list);
 };
 typedef struct type_spec spec_t;
 /* Function prototypes*/
-int print_binary(unsigned int num);
-int decoct(unsigned int num);
-int dec_hex(char c, unsigned int num);
-int print_odh(char c, unsigned int num);
-int print_reverse(char *s);
-char *rot13(va_list list);
-
+int print_binary(va_list list);
+int print_octal(va_list list);
+int print_hex(va_list list);
+int print_heX(va_list list);
+int he_check(int num, char x);
+char *rev_str(char *s);
+int rot13(va_list list);
+void _base(char *str);
+unsigned int base_len(unsigned int num, int base);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int print_reversed(va_list arg);
 int parse_args(const char *format, spec_t fun_list[], va_list arg_list);
 int print_number(va_list args);
 int print_unsgined_number(unsigned int n);

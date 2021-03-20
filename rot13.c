@@ -1,35 +1,33 @@
 #include "holberton.h"
+
 /**
- * rot13 - encrypts string with rot13
- * @list: string to change
- * Return: modified string
+ * rot13 - Converts string to rot13
+ * @list: string to convert
+ * Return: converted string
  */
-char *rot13(va_list list)
+int rot13(va_list list)
 {
-int i = 0;
+int i;
+int x;
 char *str;
-char *nstr;
-/* store va_arg to only access argument once */
+char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
 str = va_arg(list, char *);
-/* malloc new variable to assign over new rot13 characters */
-nstr = malloc(sizeof(char) * (_strlen(str) + 1));
-if (nstr == NULL)
-return (NULL);
-/* iterate str and assign rot13 char to nstr */
-while (str[i] != '\0')
+if (str == NULL)
+return (-1);
+for (i = 0; str[i] != '\0'; i++)
 {
-if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+for (x = 0; x <= 52; x++)
 {
-nstr[i] = str[i] + 13;
-}
-else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
+if (str[i] == s[x])
 {
-nstr[i] = str[i] - 13;
+_putchar(u[x]);
+break;
 }
-else
-(nstr[i] = str[i]);
-i++;
 }
-nstr[i] = '\0';
-return (nstr);
+if (x == 53)
+_putchar(str[i]);
+}
+return (i);
 }
