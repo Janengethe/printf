@@ -2,35 +2,41 @@
 
 /**
  * print_binary - converts an unsigned int to binary
- * @num: int to be converted
+ * @list: int to be converted
  *
  * Return: no of resulting binary characters
  */
-int print_binary(unsigned int num)
+int print_binary(va_list list)
 {
-int chars_printed = 0, i = 0;
-char bin[sizeof(unsigned int) * 8];
+unsigned int num;
+int i, len;
+char *str;
+char *rev_s;
+
+num = va_arg(list, unsigned int);
 if (num == 0)
+return (_putchar('0'));
+if (num < 1)
+return (-1);
+len = base_len(num, 2);
+str = malloc(sizeof(char) * len + 1);
+if (str == NULL)
+return (-1);
+
+for (i = 0; num > 0; i++)
 {
-chars_printed += _putchar('0');
-return (chars_printed);
-}
-if (num == 1)
-{
-chars_printed += _putchar('1');
-return (chars_printed);
-}
-while (num > 0)
-{
-bin[i] = '0' + (num % 2);
+if (num % 2 == 0)
+str[i] = '0';
+else
+str[i] = '1';
 num = num / 2;
-i++;
 }
-i--;
-while (i >= 0)
-{
-chars_printed += _putchar(bin[i]);
-i--;
-}
-return (chars_printed);
+str[i] = '\0';
+rev_s = rev_str(str);
+if (rev_s == NULL)
+return (-1);
+_base(rev_s);
+free(str);
+free(rev_s);
+return (len);
 }
