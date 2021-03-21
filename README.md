@@ -37,4 +37,13 @@
 |11| *Advanced*| |
 |12| *Advanced*| |
 |13| *Advanced*| |
-      
+### Files description:
+1. **base_change** Converts decimal int to octal and hex
+2. **binary.c** Converts unsigned integer to binary
+3. **holberton.h** Contains function prototypes and global variable definitions
+4. **integers.c** Prints integers
+5. **man_3_printf** Contains the description of the function _printf
+6. **numbers.c** Functions to print unsigned int
+7. **parse_args** - Contains a function that iterates through the main string to print a formatted string
+8. **Handles  custom conversion specifier `S`. Prints the string and Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+9. **_printf.c** Caller function that prints formatted string from the main string and other variable arguments
