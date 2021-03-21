@@ -27,4 +27,14 @@
 |1       | **Mandatory**| Handle the following conversion specifiers: d i |
 |2 |**Mandatory** | Create a `man page` for your function|
 |3 | *Advanced*| Handle the following custom conversion specifiers: `b` the unsiged int argumment is converted to binary|
+|4 |*Advanced*| Handle conversion specifiers `u, o x, X`|
+|5| | |
+|6| *Advanced*| Handle conversion specifier `p`|
+|7| *Advanced*| Handle custom conversion specifier, `S`|
+|8| *Advanced*| |
+|9| *Advanced*| |
+|10| *Advanced*| |
+|11| *Advanced*| |
+|12| *Advanced*| |
+|13| *Advanced*| |
       
