@@ -19,6 +19,10 @@ To use _printf you have to use the following key characters preceeded by % symbo
 %i: To print integers of max and min size of an int type
 .RS 0
 %b: To print a number in binary form
+.RS 0
+%p: To be used to print  pointer addresses
+.RS 0
+%S: To be used to print non-printable characters
 .SH RETURN VALUES
 The _printf() function returns an integer representing the number of symbols
 printed not counting \\0 for the string.
